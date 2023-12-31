@@ -282,25 +282,27 @@ main.page-content { position: absolute; top: 84px; left: 0; right: 0; bottom: 10
 
 @media (min-width: 1500px) { .wrapper { max-width: 1000px; } }
 
-@media (orientation: portrait) { .wrapper { max-width: 100vw; } }
+@media only screen and (max-width: 1000px) { .wrapper { max-width: 100vw; } }
 
 .site-logo-img { float: left; margin-top: 5px; margin-right: 5px; width: 96px; }
 
 .site-title { font-weight: bold; }
 
 /* .site-nav .page-link:not(:last-child){ margin-right: 0; } */
-.contact-us { display: inline-block; padding: 0 5px; border: 1px solid #ccc; /*  border-top-width: 1px; border-left-width: 1px; border-right-width: 3px; border-bottom-width: 3px; */ border-radius: 5px; border-color: #000; text-decoration: none; /* Remove underlines from links */ /* Hover effect (optional) */ }
-
-.contact-us:hover { background-color: #eee; /* Change background color on hover */ cursor: pointer; /* Change cursor to a pointer */ }
-
 /* .post-list { border-collapse: collapse; } */
 .post-list td, .post-list th { height: 20px; padding: auto; border-bottom: 1px solid #ddd; /* Adjust color and width as needed */ }
 
 .post-link { display: inline; font-size: initial; }
 
-@media (orientation: portrait) { .site-footer { display: none; } }
+/* @media only screen and (orientation: landscape) { */
+.site-footer { display: block; position: fixed; /* Keep footer fixed to bottom */ bottom: 0; left: 0; width: 100%; padding: 10px; border-top: 2px solid #e8e8e8; }
 
-@media (orientation: landscape) { .site-footer { display: block; position: fixed; /* Keep footer fixed to bottom */ bottom: 0; left: 0; width: 100%; padding: 10px; border-top: 2px solid #e8e8e8; } }
+/* @media only screen and (max-width: 800px) and (orientation: portrait) { */
+@media only screen and (max-width: 700px) { .site-footer { display: none; visibility: hidden; height: 0; } .wrapper { max-width: 100vw; } }
+
+.contact-us { display: inline-block; padding: 0 5px; border: 1px solid #ccc; /*  border-top-width: 1px; border-left-width: 1px; border-right-width: 3px; border-bottom-width: 3px; */ border-radius: 5px; border-color: #000; text-decoration: none; /* Remove underlines from links */ /* Hover effect (optional) */ }
+
+.contact-us:hover { background-color: #eee; /* Change background color on hover */ cursor: pointer; /* Change cursor to a pointer */ }
 
 .footer-col-1 { width: 15%; }
 
