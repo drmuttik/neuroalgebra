@@ -288,6 +288,8 @@ main.page-content { position: absolute; top: 84px; left: 0; right: 0; bottom: 10
 
 .site-title { font-weight: bold; }
 
+.active-tab { text-decoration: underline; }
+
 /* .site-nav .page-link:not(:last-child){ margin-right: 0; } */
 /* .post-list { border-collapse: collapse; } */
 .post-list td, .post-list th { height: 20px; padding: auto; border-bottom: 1px solid #ddd; /* Adjust color and width as needed */ }
@@ -313,6 +315,7 @@ main.page-content { position: absolute; top: 84px; left: 0; right: 0; bottom: 10
 
 @keyframes move { 100% { transform: translate3d(0, 0, 1px) rotate(360deg); } }
 
+/* background from https://wweb.dev/resources/animated-css-background-generator */
 .background { position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; background: #ffffff; overflow: hidden; }
 
 .background span { width: 5vmin; height: 5vmin; border-radius: 5vmin; backface-visibility: hidden; position: absolute; animation: move; animation-duration: 45; animation-timing-function: linear; animation-iteration-count: infinite; }
