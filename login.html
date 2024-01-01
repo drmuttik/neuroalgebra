@@ -7,8 +7,6 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="LOGIN" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="/neuroalgebra/login.html" />
-<meta property="og:url" content="/neuroalgebra/login.html" />
 <meta property="og:site_name" content="Neuroalgebra" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
@@ -103,15 +101,37 @@ In future we might add an ability to sign up and log in to perform computations 
         <ul class="contact-list">
           <li class="p-name">
             <!--Neuroalgebra</li><li><a class="u-email" href="mailto:postmaster@neuroalgebra.com">postmaster@neuroalgebra.com</a></li>-->
+            <!--
             <li><a href="/neuroalgebra/contact.html" class="contact-us">Contact Us</a></li>
+            -->
+            <li class="contact-us" onclick="openEmailClient()">Contact Us</li>
         </ul>
       </div>
+
+      <script>
+        function openEmailClient() {
+          function oES() {
+            var empty = '' + ' ' + String.fromCharCode(32); 
+            return empty.trim();
+          }
+
+          function genEmail() {
+            var user = 'post'+oES()+'master';
+            var s1 = String.fromCharCode(64);
+            var s2 = String.fromCharCode(46);
+            var domain = 'neuro'+oES()+'algebra' + s2 + 'com';
+            return user + s1 + oES() + domain;
+          }
+
+          window.location.href = 'mailto:' + genEmail();
+        }
+      </script>
 
       <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/LeonidSavtchenko"><svg class="svg-icon"><use xlink:href="/neuroalgebra/assets/minima-social-icons.svg#github"></use></svg> <span class="username">LeonidSavtchenko</span></a></li></ul>
 </div>
 
       <div class="footer-col footer-col-3">
-        <p class="rss-subscribe">Subscribe to updates <a href="/neuroalgebra/feed.xml">via RSS</a></p>
+        <p class="rss-subscribe">Subscribe to <a href="/neuroalgebra/feed.xml"> updates via RSS</a></p>
 <!--
         <p></p>
 -->
@@ -121,6 +141,36 @@ In future we might add an ability to sign up and log in to perform computations 
   </div>
 
 </footer>
-</body>
+<script>
+      //JS adds .active-tab class to the currently selected menu item (.page-link)
+      const pageLinks = document.querySelectorAll('.page-link');
+
+      // Function to highlight the active link based on the current page URL
+      function highlightActiveLink() {
+        const currentPagePath = window.location.pathname;
+
+        pageLinks.forEach((link) => {
+          if (link.href.endsWith(currentPagePath)) {
+            link.classList.add('active-tab');
+          } else {
+            link.classList.remove('active-tab');
+          }
+        });
+      }
+
+      // Highlight the active link on initial page load
+      highlightActiveLink();
+
+      // Add event listener to highlight the clicked link
+      pageLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          // Remove 'active-tab' class from all links before adding it to the clicked link
+          pageLinks.forEach((link) => link.classList.remove('active-tab'));
+          link.classList.add('active-tab');
+        });
+      });
+    </script>
+
+  </body>
 
 </html>
